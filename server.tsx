@@ -1,5 +1,5 @@
 import * as randomWord from "random-word";
-import * as socketIo from "socket.io";
+// import * as socketIo from "socket.io";
 import {
   Game,
   Player,
@@ -14,8 +14,15 @@ import {
   SCORE_TYPE
 } from "./src/types/types";
 
+var app = require('express')();
+var server = require('http').Server(app);
+var io = require('socket.io')(server);
 const port = process.env.PORT || 8888;
-const io = socketIo.listen(port);
+server.listen(port);
+app.get('/', function (req, res) {
+  res.sendFile(__dirname + '/public/index.html');
+});
+
 
 const gamesById: { string?: Game } = {};
 

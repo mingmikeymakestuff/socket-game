@@ -36,8 +36,9 @@
   },
   "scripts": {
     "babel": "babel --presets es2015 js/main.js -o build/main.bundle.js",
-    "start": "react-scripts-ts start",
+    "start": "ts-node server.tsx",
     "build": "react-scripts-ts build",
+    "heroku-postbuild": "webpack -p",
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject"
   },
