@@ -11,13 +11,17 @@ module.exports = {
       rules: [
         {
           test: /\.js$/,
+          exclude: /node_modules/,
           use: {
             loader: "babel-loader"
           }
         },
         {
-            test: /\.tsx?$/,
-            use: 'ts-loader',
+            test: /\.tsx$/,
+            exclude: /node_modules/,
+            use: {
+              loader: "ts-loader"
+            }
           },
         {
           test: /\.css$/,
