@@ -1,12 +1,12 @@
 import * as React from "react";
-import { ROUND_STATUS, Player } from "types/types";
+import { ROUND_STATUS, Player } from "../../../types/types";
 import {
     getPlayers, 
     getRoundStatus,
     getPlayerData 
-} from "selectors";
+} from "../../../selectors";
 import { connect } from "react-redux";
-import { updateMissionVote } from "socket";
+import { updateMissionVote } from "../../../socket";
 
 interface VoteButtonsProps {
     players: Player[];

@@ -22,8 +22,6 @@ const app = express();
 
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
-
-server.listen(port);
 // the __dirname is the current directory from where the script is running
 app.use(express.static(__dirname + '/public'));
 
@@ -31,6 +29,8 @@ app.use(express.static(__dirname + '/public'));
 app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname + '/public/', 'index.html'));
 });
+server.listen(port);
+
 const gamesById: { string?: Game } = {};
 
 /* Random Word */

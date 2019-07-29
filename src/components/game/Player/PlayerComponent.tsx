@@ -1,7 +1,7 @@
 import { FaRegUser, FaUser, FaThumbsUp, FaThumbsDown } from 'react-icons/fa'
 import * as React from "react";
-import { ROUND_STATUS, Player, Round } from "types/types";
-import { pickPlayer } from "socket";
+import { ROUND_STATUS, Player, Round } from "../../../types/types";
+import { pickPlayer } from "../../../socket";
 import {
   getPlayerDataById,
   getCurrentPlayerTurn,
@@ -10,9 +10,8 @@ import {
   getPlayerData,
   getRounds,
   getRoundStatus
-} from "selectors";
+} from "../../../selectors";
 import { connect } from "react-redux";
-import { throws } from 'assert';
 
 interface PlayerComponentOwnProps {
   readonly key: number;

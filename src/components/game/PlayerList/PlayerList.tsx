@@ -8,10 +8,10 @@ import {
   getPlayerData,
   getRoundStatus,
   getRounds
-} from "selectors";
-import { Player, ROUND_STATUS, Round, ROLES } from "types/types";
+} from "../../../selectors";
+import { Player, ROUND_STATUS, Round, ROLES } from "../../../types/types";
 import { connect } from "react-redux";
-import { proposeTeam, updateTeamVote, killMerlin } from "socket";
+import { proposeTeam, updateTeamVote, killMerlin } from "../../../socket";
 
 interface PlayerListState {
   playerNeededTooltip : boolean;

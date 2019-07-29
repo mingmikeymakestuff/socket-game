@@ -1,8 +1,8 @@
 import { FaChessKnight, FaSkull } from 'react-icons/fa'
 import * as React from "react";
 import { connect } from "react-redux";
-import { getPlayerData, getPlayers } from "selectors";
-import { Player, TEAM, ROLES } from "types/types";
+import { getPlayerData, getPlayers } from "../../../selectors";
+import { Player, TEAM, ROLES } from "../../../types/types";
 
 interface RoleButtonProps {
   playerData: Player;

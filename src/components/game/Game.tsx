@@ -19,8 +19,8 @@ import {
   getCurrentPage,
   getScore,
   getIncludes
-} from "selectors";
-import { Player, ROUND_STATUS, Round, GAME_STATUS, VOTE_INDEX, TEAM, SCORE_TYPE } from "types/types";
+} from "../../selectors";
+import { Player, ROUND_STATUS, Round, GAME_STATUS, VOTE_INDEX, TEAM, SCORE_TYPE } from "../../types/types";
 
 interface GameState {
   oldVotes: number[];
