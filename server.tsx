@@ -13,7 +13,7 @@ import {
   ROLES,
   SCORE_TYPE
 } from "./src/types/types";
-
+declare var require: any
 const express = require('express');
 const path = require('path');
 
