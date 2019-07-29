@@ -14,22 +14,19 @@ import {
   SCORE_TYPE
 } from "./src/types/types";
 
-const express = require('express');
-const path = require('path');
+// const express = require('express');
+// const path = require('path');
+
 const port = process.env.PORT || 8080;
-const app = express();
+// const INDEX = path.join(__dirname + '/public', 'index.html');
+
+// const server = express()
+//   .use((req, res) => res.sendFile(INDEX) )
+//   .listen(port, () => console.log(`Listening on ${ [port] }`));
+
+const io = socketIo.listen(port);
 
 
-var server = require('http').Server(app);
-var io = require('socket.io')(server);
-// the __dirname is the current directory from where the script is running
-app.use(express.static(__dirname + '/public'));
-
-// send the user to index html page inspite of the url
-app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname + '/public/', 'index.html'));
-});
-server.listen(port);
 
 const gamesById: { string?: Game } = {};
 
