@@ -1,5 +1,5 @@
 import * as randomWord from "random-word";
-// import * as socketIo from "socket.io";
+import * as socketIo from "socket.io";
 import {
   Game,
   Player,
@@ -14,16 +14,23 @@ import {
   SCORE_TYPE
 } from "./src/types/types";
 
-var app = require('express')();
+const express = require('express');
+const path = require('path');
+const port = process.env.PORT || 8080;
+const app = express();
+
+
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
-const port = process.env.PORT || 8888;
+
 server.listen(port);
-app.get('/', function (req, res) {
-  res.sendFile(__dirname + '/public/index.html');
+// the __dirname is the current directory from where the script is running
+app.use(express.static(__dirname + '/public'));
+
+// send the user to index html page inspite of the url
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname + '/public/', 'index.html'));
 });
-
-
 const gamesById: { string?: Game } = {};
 
 /* Random Word */
