@@ -14,11 +14,12 @@ import {
   SCORE_TYPE
 } from "./src/types/types";
 declare var require: any
+declare var process: any
 const express = require('express');
 const path = require('path');
 
 const port = process.env.PORT || 8080;
-const INDEX = path.join(__dirname + '/public', 'index.html');
+const INDEX = path.join('.' + '/public', 'index.html');
 
 const server = express()
   .use((req, res) => res.sendFile(INDEX) )
