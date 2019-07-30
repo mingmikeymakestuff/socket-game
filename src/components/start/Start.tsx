@@ -7,6 +7,7 @@ import Lobby from "../lobby";
 import Game from "../game";
 import Rejoin from "../rejoin";
 import { getCurrentPage } from "../../selectors";
+import "../../App.css"
 
 class StartGame extends React.Component<any, any> {
   public render() {

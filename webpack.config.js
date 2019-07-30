@@ -1,6 +1,7 @@
+const path = require('path');
 module.exports = {
     entry: [
-      './src/index.tsx'
+      './src/index.tsx', './src/App.css'
     ],
     output: {
       path: __dirname,
@@ -33,19 +34,7 @@ module.exports = {
         {
           test: /\.css$/,
           use: [
-            {
-              loader: "style-loader"
-            },
-            {
-              loader: "css-loader",
-              options: {
-                modules: true,
-                importLoaders: 1,
-                localIdentName: "[name]_[local]_[hash:base64]",
-                sourceMap: true,
-                minimize: true
-              }
-            }
+              "style-loader", "css-loader"
           ]
         }
       ]
