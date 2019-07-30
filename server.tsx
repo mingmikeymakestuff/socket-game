@@ -20,10 +20,13 @@ const express = require('express');
 const path = require('path');
 
 const port = process.env.PORT || 8080;
-const INDEX = path.join(__dirname + '/public', 'index.html');
+//const INDEX = path.resolve(__dirname + '/public/');
 
 const server = express()
-  .use((req, res) => res.sendFile(INDEX) )
+  .use(express.static(__dirname + '/public'))
+  .get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname + '/public', 'index.html'));
+  })
   .listen(port, () => console.log(`Listening on ${ [port] }`));
 
 const io = socketIo.listen(server);
