@@ -19,7 +19,7 @@ declare var process: any
 
 const express = require('express');
 const path = require('path');
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 8888;
 const app = express();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
