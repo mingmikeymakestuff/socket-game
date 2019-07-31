@@ -1,9 +1,6 @@
 {
   "name": "mafia",
   "version": "0.1.0",
-  "engines": {
-    "node": "6.2.0"
-  },
   "babel": {
     "presets": [
       "env"
