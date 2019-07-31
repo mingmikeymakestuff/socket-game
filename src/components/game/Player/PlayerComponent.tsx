@@ -76,7 +76,7 @@ class PlayerComponent extends React.Component<PlayerComponentProps, any> {
       <div className="PlayerCol col">
         <div className="PlayerCard card" onClick={this.onPlayerClick}>
           <div className="PlayerCardBody card-body">
-            <p className="cardInfo card-text">{player.nickName}</p>
+            <p className="cardInfo card-text">{player.nickName.toString()}</p>
             <p className="Iconsize card-text">{this.getPlayerIcon()}&nbsp;{this.displayVote()}</p>
           </div>
         </div>

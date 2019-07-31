@@ -267,7 +267,7 @@ class Game extends React.Component<GameStateProps, any> {
         <PlayerList/>
         {/* <VoteButtons roundStatus={roundStatus} players = {players}/> */}
         </div>
-        <Legend/>
+        {/* <Legend/> */}
       </div>
     );
   }

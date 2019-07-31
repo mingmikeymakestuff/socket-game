@@ -191,9 +191,9 @@ class PlayerList extends React.Component<any, any> {
           {this.secondPlayerRow()}
         </div>
         <br />
-        <div>{this.showProposeOrVoteButton()}</div>
+        {/* <div>{this.showProposeOrVoteButton()}</div>
         <div>{this.showPlayerNeededToolTip()}</div>
-        <div>{this.showMerlinNeededToolTip()}</div>
+        <div>{this.showMerlinNeededToolTip()}</div> */}
       </div>
     );
   }
