@@ -17,34 +17,23 @@ declare var require: any
 declare var  __dirname: any
 declare var process: any
 
-// const express = require('express');
-// const path = require('path');
-// const port = process.env.PORT || 8080;
-// const app = express();
-// var server = require('http').Server(app);
-// var io = require('socket.io')(server);
-// // the __dirname is the current directory from where the script is running
-// app.use(express.static(__dirname));
-
-// // send the user to index html page inspite of the url
-// app.get('*', (req, res) => {
-//   res.sendFile(path.resolve(__dirname + '/public',  'index.html'));
-// });
-// server.listen(port);
-
-
 const express = require('express');
-const socketIO = require('socket.io');
 const path = require('path');
+const port = process.env.PORT || 8080;
+const app = express();
+var server = require('http').Server(app);
+var io = require('socket.io')(server);
+// the __dirname is the current directory from where the script is running
+app.use(express.static(__dirname));
 
-const PORT = process.env.PORT || 3000;
-const INDEX = path.join(__dirname, 'index.html');
+// send the user to index html page inspite of the url
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname + '/public',  'index.html'));
+});
+server.listen(port);
 
-const server = express()
-  .use((req, res) => res.sendFile(INDEX) )
-  .listen(PORT, () => console.log(`Listening on ${ PORT }`));
 
-const io = socketIO(server);
+
 //const io = app.listen(port);
 
 const gamesById: { string?: Game } = {};
