@@ -172,13 +172,13 @@ class PlayerList extends React.Component<any, any> {
   // Returns 5 players in first row 
   public firstPlayerRow() {
     const firstRow = this.props.players.slice(0, 5);
-    return  <div>{firstRow.map(player => (<PlayerComponent key={player.socketId.toString()} player={player} />))}</div>
+    return firstRow.map(player => (<PlayerComponent key={player.socketId.toString()} player={player} />));
   }
   
   // Returns second 5 players in second row
   public secondPlayerRow() {
     const firstRow = this.props.players.slice(5, 10);
-    return <div>{firstRow.map(player => (<PlayerComponent key={player.socketId.toString()} player={player} />))}</div>
+    return firstRow.map(player => (<PlayerComponent key={player.socketId.toString()} player={player} />))
   }
 
   public render() {
