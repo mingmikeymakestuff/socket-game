@@ -3,7 +3,7 @@ import { setGameData, navigateTo } from "../actions";
 import { setSocketId } from "../actions";
 
 const port = process.env.PORT || 8080;
-const socket = io("http://localhost:"+{port});
+const socket = io("https://localhost:"+port);
 export class SocketListener {
   constructor(store) {
     socket.on("JOINED_GAME", game => {
