@@ -23,6 +23,7 @@ interface PlayerListProps {
   roundStatus: ROUND_STATUS;
   rounds: Round[];
   currentRound: number;
+  currentPlayerTurn: Player[];
 }
 
 class PlayerList extends React.Component<any, any> {
@@ -99,7 +100,7 @@ class PlayerList extends React.Component<any, any> {
       } else {
         return (
           <div>
-            {currentPlayerTurn} is picking a team
+            {currentPlayerTurn.nickName.toString()} is picking a team
           </div>
         );
       }
@@ -172,13 +173,13 @@ class PlayerList extends React.Component<any, any> {
   // Returns 5 players in first row 
   public firstPlayerRow() {
     const firstRow = this.props.players.slice(0, 5);
-    return firstRow.map(player => (<PlayerComponent key={player.socketId} player={player} />));
+    return firstRow.map(player => (<PlayerComponent key={player.socketId.toString()} player={player} />));
   }
   
   // Returns second 5 players in second row
   public secondPlayerRow() {
     const firstRow = this.props.players.slice(5, 10);
-    return firstRow.map(player => (<PlayerComponent key={player.socketId} player={player} />))
+    return firstRow.map(player => (<PlayerComponent key={player.socketId.toString()} player={player} />))
   }
 
   public render() {
