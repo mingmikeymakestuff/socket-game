@@ -191,9 +191,9 @@ class PlayerList extends React.Component<any, any> {
           {this.secondPlayerRow()}
         </div>
         <br />
-        {this.showProposeOrVoteButton()}
-        {this.showPlayerNeededToolTip()}
-        {this.showMerlinNeededToolTip()}
+        <div>{this.showProposeOrVoteButton()}</div>
+        <div>{this.showPlayerNeededToolTip()}</div>
+        <div>{this.showMerlinNeededToolTip()}</div>
       </div>
     );
   }
@@ -207,7 +207,7 @@ const mapStateToProps = state => {
   const players: Player[] = getPlayers(state);
   const currentRound: number = getCurrentRound(state);
   const playerData: Player = getPlayerData(state);
-  const turnToPick = playerData.socketId === currentPlayerTurn.socketId;
+  const turnToPick = playerData.socketId.toString() === currentPlayerTurn.socketId.toString();
   const amAssassin = playerData.role === ROLES.ASSASSIN
   const roundStatus = getRoundStatus(state);
 
