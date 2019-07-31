@@ -23,6 +23,7 @@ interface PlayerListProps {
   roundStatus: ROUND_STATUS;
   rounds: Round[];
   currentRound: number;
+  currentPlayerTurn: Player[];
 }
 
 class PlayerList extends React.Component<any, any> {
@@ -99,7 +100,7 @@ class PlayerList extends React.Component<any, any> {
       } else {
         return (
           <div>
-            {currentPlayerTurn} is picking a team
+            {currentPlayerTurn.nickName.toString()} is picking a team
           </div>
         );
       }
@@ -191,9 +192,9 @@ class PlayerList extends React.Component<any, any> {
           {this.secondPlayerRow()}
         </div>
         <br />
-        {/* {/* <div>{this.showProposeOrVoteButton()}</div> */}
-        <div>{this.showPlayerNeededToolTip()}</div>
-        <div>{this.showMerlinNeededToolTip()}</div>
+        {this.showProposeOrVoteButton()}
+        {this.showPlayerNeededToolTip()}
+        {this.showMerlinNeededToolTip()}
       </div>
     );
   }
