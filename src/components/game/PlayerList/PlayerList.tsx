@@ -193,7 +193,7 @@ class PlayerList extends React.Component<any, any> {
         <br />
         {/* {/* <div>{this.showProposeOrVoteButton()}</div> */}
         <div>{this.showPlayerNeededToolTip()}</div>
-        <div>{this.showMerlinNeededToolTip()}</div> */}
+        <div>{this.showMerlinNeededToolTip()}</div>
       </div>
     );
   }
