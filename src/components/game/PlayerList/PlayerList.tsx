@@ -208,7 +208,7 @@ const mapStateToProps = state => {
   const players: Player[] = getPlayers(state);
   const currentRound: number = getCurrentRound(state);
   const playerData: Player = getPlayerData(state);
-  const turnToPick = playerData.socketId.toString() === currentPlayerTurn.socketId.toString();
+  const turnToPick = playerData.socketId === currentPlayerTurn.socketId;
   const amAssassin = playerData.role === ROLES.ASSASSIN
   const roundStatus = getRoundStatus(state);
 
