@@ -264,10 +264,10 @@ class Game extends React.Component<GameStateProps, any> {
         <div style={{minHeight:"85px"}}>{this.showAnnouncment()}</div>
         <AllRounds rounds={rounds} failedVotes={failedVotes} currentRound={currentRound} />
         <div style={{minHeight:"226px"}}>
-        {/* <PlayerList/> */}
+        <PlayerList/>
         {/* <VoteButtons roundStatus={roundStatus} players = {players}/> */}
         </div>
-        {/* <Legend/> */}
+        <Legend/>
       </div>
     );
   }
