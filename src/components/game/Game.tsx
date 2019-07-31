@@ -59,7 +59,7 @@ class Game extends React.Component<GameStateProps, any> {
     const playersNeeded = rounds[currentRound - 1].playersNeeded;
     return (
       <div>
-        <h4>Turn to Pick: {curentPlayerTurn.nickName}</h4>
+        <h4>Turn to Pick: {curentPlayerTurn.nickName.toString()}</h4>
         <p><FaRegUser className="Iconsize"/>Players needed: {playersNeeded} 
         <br/><FaTimes className="Iconsize Fail"/>Fails needed: {rounds[currentRound -1].failsNeeded}</p>
       </div>
