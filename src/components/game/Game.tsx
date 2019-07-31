@@ -72,7 +72,7 @@ class Game extends React.Component<GameStateProps, any> {
     return (
       <div>
         <h4>Vote on the team:</h4>
-        <p>{players.filter(player => player.selected).map(p => p.nickName).join(", ")} </p>
+        <p>{players.filter(player => player.selected).map(p => p.nickName.toString()).join(", ")} </p>
       </div>
     );
   }
@@ -94,7 +94,7 @@ class Game extends React.Component<GameStateProps, any> {
     return (
       <div>
         <h4>Players on the mission:</h4>
-        <p>{players.filter(player => player.selected).map(p => p.nickName).join(", ")}</p>
+        <p>{players.filter(player => player.selected).map(p => p.nickName.toString()).join(", ")}</p>
       </div>
     );
   }

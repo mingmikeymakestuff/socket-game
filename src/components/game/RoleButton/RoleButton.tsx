@@ -38,15 +38,15 @@ class RoleButton extends React.Component<RoleButtonProps, RoleButtonState> {
     const { playerData, players } = this.props;
     const minions = players.filter(player => player.team === TEAM.BAD && player.socketId !== playerData.socketId)
     if( playerData.team === TEAM.BAD) {
-      return minions.map(minion => minion.nickName).join(', ');
+      return minions.map(minion => minion.nickName.toString()).join(', ');
     } else {
       if(playerData.role === ROLES.MERLIN) {
-        return minions.filter(player => player.role !== ROLES.MORDRED).map(minion => minion.nickName).join(', ');
+        return <span>{minions.filter(player => player.role !== ROLES.MORDRED).map(minion => minion.nickName.toString()).join(', ')}</span>
       }
       
       if(playerData.role === ROLES.PERCIVAL) {
         const merlinMorgana = players.filter(player => player.role === ROLES.MERLIN || player.role === ROLES.MORGANA)
-        return merlinMorgana.map(minion => minion.nickName).join(', ');
+        return <span>{merlinMorgana.map(minion => minion.nickName.toString()).join(', ')}</span>
       }
       return "???";
     } 
@@ -77,7 +77,7 @@ class RoleButton extends React.Component<RoleButtonProps, RoleButtonState> {
     if (this.state.showRole) {
       return (
         <p style={{ fontSize:"13px", float: "left", marginBottom:"0", textAlign: "left", maxWidth: "80%" }}>
-          Nickname: {playerData.nickName}
+          Nickname: {playerData.nickName.toString()}
           <br />
           Team: {playerData.team} {this.displayTeamIcon()}
           <br />
