@@ -262,12 +262,12 @@ class Game extends React.Component<GameStateProps, any> {
       <div className="Game">
         <RoleButton />
         <div style={{minHeight:"85px"}}>{this.showAnnouncment()}</div>
-        <AllRounds rounds={rounds} failedVotes={failedVotes} currentRound={currentRound} />
+        {/* <AllRounds rounds={rounds} failedVotes={failedVotes} currentRound={currentRound} /> */}
         <div style={{minHeight:"226px"}}>
-        <PlayerList/>
-        <VoteButtons roundStatus={roundStatus} players = {players}/>
+        {/* <PlayerList/> */}
+        {/* <VoteButtons roundStatus={roundStatus} players = {players}/> */}
         </div>
-        <Legend/>
+        {/* <Legend/> */}
       </div>
     );
   }

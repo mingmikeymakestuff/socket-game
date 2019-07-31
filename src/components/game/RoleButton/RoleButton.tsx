@@ -38,7 +38,7 @@ class RoleButton extends React.Component<RoleButtonProps, RoleButtonState> {
     const { playerData, players } = this.props;
     const minions = players.filter(player => player.team === TEAM.BAD && player.socketId !== playerData.socketId)
     if( playerData.team === TEAM.BAD) {
-      return minions.map(minion => minion.nickName.toString()).join(', ');
+      return <span>{minions.map(minion => minion.nickName.toString()).join(', ')}</span>
     } else {
       if(playerData.role === ROLES.MERLIN) {
         return <span>{minions.filter(player => player.role !== ROLES.MORDRED).map(minion => minion.nickName.toString()).join(', ')}</span>
